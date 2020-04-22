@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,9 +33,17 @@ public class AppareilController {
 	@ResponseBody
     @PostMapping("new")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
-    public ResponseEntity insertDocument(@RequestBody Appareil appareil){
+    public ResponseEntity insertAppareil(@RequestBody Appareil appareil){
     	appareilService.saveAppareil(appareil);
     	return ResponseEntity.ok(appareil);       
+    }
+	
+	@ResponseBody
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    public ResponseEntity deleteAppareil(@PathVariable("id") int id){
+    	appareilService.delete(id);
+    	return ResponseEntity.ok(appareilService.getAppareils());      
     }
 
 }

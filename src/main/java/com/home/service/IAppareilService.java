@@ -9,5 +9,7 @@ public interface IAppareilService {
 	public List<Appareil> getAppareils();
 	
 	public void saveAppareil(Appareil appareil);
+	
+	public void delete(int id);
 
 }

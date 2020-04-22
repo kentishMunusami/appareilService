@@ -26,4 +26,10 @@ public class AppareilService implements IAppareilService {
 		
 	}
 
+	@Override
+	public void delete(int id) {
+		appareilDao.deleteById(id);
+		
+	}
+
 }

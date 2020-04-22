@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.home.bean.Appareil;
 
-public interface IAppareilDao extends JpaRepository<Appareil, Long> {
+public interface IAppareilDao extends JpaRepository<Appareil, Integer> {
 
 }
