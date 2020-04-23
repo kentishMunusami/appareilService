@@ -32,4 +32,10 @@ public class AppareilService implements IAppareilService {
 		
 	}
 
+	@Override
+	public void updateAppareil(Appareil appareil) {
+		appareilDao.save(appareil);
+		
+	}
+
 }

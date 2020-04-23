@@ -14,7 +14,7 @@ public class Appareil {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_appareil")
-	private int idAppareil;
+	private int id;
 	
 	private String name;
 	private String status;

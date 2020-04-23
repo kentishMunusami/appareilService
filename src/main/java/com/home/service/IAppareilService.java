@@ -11,5 +11,7 @@ public interface IAppareilService {
 	public void saveAppareil(Appareil appareil);
 	
 	public void delete(int id);
+	
+	public void updateAppareil(Appareil appareil);
 
 }
