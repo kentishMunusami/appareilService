@@ -1,4 +1,4 @@
-package com.home.filter;
+package com.home.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
