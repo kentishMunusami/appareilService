@@ -1,10 +1,10 @@
 package com.home.controller;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.PUT;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,7 +37,7 @@ public class AppareilController {
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     public ResponseEntity insertAppareil(@RequestBody Appareil appareil){
     	appareilService.saveAppareil(appareil);
-    	return ResponseEntity.ok(appareil);       
+    	return new ResponseEntity<Appareil>(appareil, HttpStatus.CREATED);   
     }
 	
 	@ResponseBody
